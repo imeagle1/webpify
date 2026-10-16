@@ -1,0 +1,38 @@
+{
+  "name": "webpify",
+  "version": "1.0.0",
+  "description": "WebPify - private, offline image converter to WebP | iRamo.Ai",
+  "author": "Alireza Ramezani <https://iramo.ai>",
+  "license": "SEE LICENSE IN LICENSE",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --x64"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "ai.iramo.webpify",
+    "productName": "WebPify",
+    "asar": true,
+    "files": [
+      "main.js",
+      "src/**/*"
+    ],
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "win": {
+      "icon": "build/icon.png",
+      "target": [
+        "portable"
+      ]
+    },
+    "portable": {
+      "artifactName": "WebPify-Portable-${version}.${ext}"
+    }
+  }
+}
